@@ -10,8 +10,11 @@ function createHeaderBar() {
     const headerAboutButton = headerHomeButton.cloneNode('true');
 
     headerAboutButton.textContent = 'ABOUT';
+    headerAboutButton.classList.add('header-button-inactive');
     headerHomeButton.textContent = 'HOME';
+    headerHomeButton.classList.add('header-button-active');
     headerMenuButton.textContent = 'MENU';
+    headerMenuButton.classList.add('header-button-inactive');
 
     header.append(headerHomeButton, headerMenuButton, headerAboutButton);
 
