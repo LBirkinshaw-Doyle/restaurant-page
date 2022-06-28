@@ -1,4 +1,6 @@
 import './style.css'
-import * as DOM from './dom.js'
+import {createHeaderBar} from './dom.js';
+import * as Home from './home.js';
 
-DOM.createHeaderBar();
+createHeaderBar();
+Home.createHomePage();

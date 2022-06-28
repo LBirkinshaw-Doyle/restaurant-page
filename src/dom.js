@@ -22,18 +22,34 @@ export function createHeaderBar() {
 
 export function createSection(headerText, paragraphText) {
     const content = document.getElementById('content');
-
     const section = document.createElement('section');
     const title = document.createElement('h2');
-    const paragraph = document.createElement('p');
 
     section.classList.add('section', 'container');
     title.classList.add('section');
-    paragraph.classList.add('section');
-
     title.textContent = headerText;
-    paragraph.textContent = paragraphText;
+    section.appendChild(title);
 
-    section.append(title, paragraph);
+    let paragraph
+    [...arguments].forEach((argument, index) => {
+        if (index !== 0){
+            paragraph = document.createElement('p');
+            paragraph.classList.add('section');
+            paragraph.textContent = argument;
+            section.appendChild(paragraph);
+        }
+    })
+    
     content.appendChild(section);
+    
 };
+
+export function createTitle(titleText) {
+    const content = document.getElementById('content');
+
+    const title = document.createElement('h1');
+    title.classList.add('title');
+
+    title.textContent = titleText;
+    content.appendChild(title);
+}
