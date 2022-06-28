@@ -53,3 +53,11 @@ export function createTitle(titleText) {
     title.textContent = titleText;
     content.appendChild(title);
 }
+
+export function clearContent() {
+    const content = document.getElementById('content');
+
+    while (content.childElementCount > 1) {
+        content.removeChild(content.lastChild);
+    }
+}

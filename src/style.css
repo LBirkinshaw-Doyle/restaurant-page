@@ -26,6 +26,7 @@ header{
     border-radius: 0;
     padding: 2;
     border: none;
+    cursor: pointer;
 }
 .header-button-active{
     background-color: rgba(0, 0, 0, 0.2);
