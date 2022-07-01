@@ -70,3 +70,39 @@ header{
 .section p{
     margin: 2px 0;
 }
+
+.image-section{
+    text-align: center;
+    padding: 0 5%;
+}
+.image-section h2::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    clip-path: polygon(50% 0%, 0 100%, 100% 100%);
+    margin: 5px;
+}
+.image-section h2::after{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    clip-path: polygon(50% 90%, 0 0%, 100% 0%);
+    margin: 5px;
+}
+
+.image-section.container{
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+        "header header"
+        "image para";
+}
+.image-section h2{
+    grid-area: header;
+}
+.image-section img{
+    grid-area: image;
+}
+.image-section p{
+    grid-area: para;
+}
