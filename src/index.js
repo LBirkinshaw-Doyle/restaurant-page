@@ -1,6 +1,7 @@
 import './style.css'
 import {createHeaderBar, clearContent} from './dom.js';
 import * as Home from './home.js';
+import * as Menu from './menu.js';
 
 createHeaderBar();
 Home.createHomePage();
@@ -31,6 +32,7 @@ headerButtons.forEach(
             case 'MENU':
                 button.addEventListener('click', () => {
                     clearContent();
+                    Menu.createMenuPage();
                     toggleHeaderButtonStyle(index);
                 });
                 break;

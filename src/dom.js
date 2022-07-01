@@ -61,7 +61,7 @@ export function createPictureSection(headerText, imageSrc, paragraphText) {
 
     let paragraph
     [...arguments].forEach((argument, index) => {
-        if (index !== 0 || index !== 1){
+        if (index !== 0 && index !== 1){
             paragraph = document.createElement('p');
             paragraph.classList.add('image-section');
             paragraph.textContent = argument;
