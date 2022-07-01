@@ -44,6 +44,35 @@ export function createSection(headerText, paragraphText) {
     
 };
 
+export function createPictureSection(headerText, imageSrc, paragraphText) {
+    const content = document.getElementById('content');
+    const section = document.createElement('section');
+    const title = document.createElement('h2');
+    const img = document.createElement('img');
+
+    section.classList.add('image-section', 'container');
+    title.classList.add('image-section');
+    title.textContent = headerText;
+    section.appendChild(title);
+
+    img.src = imageSrc;
+    img.classList.add('image');
+    section.appendChild(img);
+
+    let paragraph
+    [...arguments].forEach((argument, index) => {
+        if (index !== 0 || index !== 1){
+            paragraph = document.createElement('p');
+            paragraph.classList.add('image-section');
+            paragraph.textContent = argument;
+            section.appendChild(paragraph);
+        }
+    })
+    
+    content.appendChild(section);
+    
+};
+
 export function createTitle(titleText) {
     const content = document.getElementById('content');
 
