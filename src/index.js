@@ -2,6 +2,7 @@ import './style.css'
 import {createHeaderBar, clearContent} from './dom.js';
 import * as Home from './home.js';
 import * as Menu from './menu.js';
+import * as About from './about.js';
 
 createHeaderBar();
 Home.createHomePage();
@@ -39,6 +40,7 @@ headerButtons.forEach(
             case 'ABOUT':
                 button.addEventListener('click', () => {
                     clearContent();
+                    About.createAboutPage();
                     toggleHeaderButtonStyle(index);
                 });
                 break;
